@@ -1,4 +1,6 @@
-﻿namespace ECS_ModernSolution
+﻿using System;
+
+namespace ECS_ModernSolution
 {
     internal class TempSensor
     {
