@@ -2,13 +2,17 @@
 
 namespace ECS_ModernSolution
 {
-    class Program
+    public class Application
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var ecs = new ECS(28);
 
+            ecs.Regulate();
 
+            ecs.SetThreshold(20);
+
+            ecs.Regulate();
         }
     }
 }
