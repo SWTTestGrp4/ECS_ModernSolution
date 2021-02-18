@@ -39,6 +39,7 @@ namespace ECS_ModernSolution
                 _heater.TurnOn();
             else
                 _heater.TurnOff();
+
             if (t>= MaxThreshold)
             {
                 Console.WriteLine("Window opened");

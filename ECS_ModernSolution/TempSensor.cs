@@ -9,6 +9,7 @@ namespace ECS_ModernSolution
         public int GetTemp()
         {
             return gen.Next(-5, 45);
+            //return 5; for testing
         }
 
         public bool RunSelfTest()
