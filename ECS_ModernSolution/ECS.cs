@@ -6,6 +6,7 @@ namespace ECS_ModernSolution
     {
         private int _minThreshold;
         private int _maxThreshold = 45;
+        public bool WindowOpen { get; set; }
 
         public int MaxThreshold
         {
@@ -42,10 +43,12 @@ namespace ECS_ModernSolution
 
             if (t>= MaxThreshold)
             {
+                WindowOpen = true;
                 Console.WriteLine("Window opened");
             }
             else
             {
+                WindowOpen = false;
                 Console.WriteLine("Window closed");
             }
 

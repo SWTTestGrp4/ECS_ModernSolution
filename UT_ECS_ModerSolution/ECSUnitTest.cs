@@ -44,5 +44,21 @@ namespace UT_ECS_ModernSolution
 
             Assert.That(fakeHeater.Result, Is.EqualTo(true));
         }
+
+        [Test]
+        public void Regulate_TempUnderThreshold_WindowClosed()
+        {
+            fakeSensor.Temp = 40;
+            uut.Regulate();
+            Assert.That(uut.WindowOpen, Is.EqualTo(false));
+        }
+
+        [Test]
+        public void Regulate_TempOverThreshold_WindowOpen()
+        {
+            fakeSensor.Temp = 50;
+            uut.Regulate();
+            Assert.That(uut.WindowOpen, Is.EqualTo(true));
+        }
     }
 }
