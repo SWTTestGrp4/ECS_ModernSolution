@@ -1,8 +1,18 @@
-﻿namespace ECS_ModernSolution
+﻿using System;
+using System.Windows;
+namespace ECS_ModernSolution
 {
     public class ECS
     {
         private int _threshold;
+        private int _maxThreshold = 45;
+
+        public int MaxThreshold
+        {
+            get { return _maxThreshold; }
+            set { _maxThreshold = value; }
+        }
+
         private readonly ISensor _tempSensor;
         private readonly IHeater _heater;
 
@@ -20,6 +30,14 @@
                 _heater.TurnOn();
             else
                 _heater.TurnOff();
+            if (t>= MaxThreshold)
+            {
+                Console.WriteLine("Window opened");
+            }
+            else
+            {
+                Console.WriteLine("Window closed");
+            }
 
         }
 
