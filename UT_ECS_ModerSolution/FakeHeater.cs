@@ -6,16 +6,16 @@ namespace UT_ECS_ModernSolution
     public class FakeHeater: IHeater
     {
 
-        public bool result { get; set; }
+        public bool Result { get; set; }
         public void TurnOn()
         {
-            result = true;
+            Result = true;
             Console.WriteLine("Heater turned on");
         }
 
         public void TurnOff()
         {
-            result = false;
+            Result = false;
             Console.WriteLine("Heater turned off");
         }
 

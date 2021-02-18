@@ -26,6 +26,23 @@ namespace UT_ECS_ModernSolution
             fakeSensor.Temp = fakeTemp;
             Assert.That(uut.GetCurTemp(), Is.EqualTo(fakeTemp));
         }
-        
+
+        [Test]
+        public void Regulate_ValueOverThreshold_HeaterOff()
+        {
+            fakeSensor.Temp = 15;
+            uut.Regulate();
+
+            Assert.That(fakeHeater.Result, Is.EqualTo(false));
+        }
+
+        [Test]
+        public void Regulate_ValueUnderThreshold_HeaterOn()
+        {
+            fakeSensor.Temp = 5;
+            uut.Regulate();
+
+            Assert.That(fakeHeater.Result, Is.EqualTo(true));
+        }
     }
 }
