@@ -14,6 +14,25 @@ namespace ECS_ModernSolution
             ecs.SetThreshold(20);
 
             ecs.Regulate();
+
+            while (true)
+            {
+                var key = Console.ReadKey(true);
+
+                switch (key.KeyChar)
+                {
+                    case '1':
+                        ecs.SetThreshold(8);
+                        Console.WriteLine("Threshold set to 10");
+                        ecs.Regulate();
+                        break;
+                    case '2':
+                        ecs.SetThreshold(50);
+                        Console.WriteLine("Threshold set to 50");
+                        ecs.Regulate();
+                        break;
+                }
+            }
         }
     }
 }

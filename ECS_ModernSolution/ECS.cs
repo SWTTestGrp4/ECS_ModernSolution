@@ -4,7 +4,7 @@ namespace ECS_ModernSolution
 {
     public class ECS
     {
-        private int _threshold;
+        private int _minThreshold;
         private int _maxThreshold = 45;
 
         public int MaxThreshold
@@ -13,12 +13,21 @@ namespace ECS_ModernSolution
             set { _maxThreshold = value; }
         }
 
+
+        public int MinThreshold
+        {
+            get { return _minThreshold; }
+            set { _minThreshold = value; }
+        }
+
+
         private readonly ISensor _tempSensor;
         private readonly IHeater _heater;
 
-        public ECS(int thr, ISensor tempSensor, IHeater heater)
+        public ECS(int minThr, int maxThr, ISensor tempSensor, IHeater heater)
         {
-            SetThreshold(thr);
+            _minThreshold = minThr;
+            _maxThreshold = maxThr;
             _tempSensor = tempSensor;
             _heater = heater;
         }
@@ -26,7 +35,7 @@ namespace ECS_ModernSolution
         public void Regulate()
         {
             var t = _tempSensor.GetTemp();
-            if (t < _threshold)
+            if (t < _minThreshold)
                 _heater.TurnOn();
             else
                 _heater.TurnOff();
@@ -43,12 +52,12 @@ namespace ECS_ModernSolution
 
         public void SetThreshold(int thr)
         {
-            _threshold = thr;
+            _minThreshold = thr;
         }
 
         public int GetThreshold()
         {
-            return _threshold;
+            return _minThreshold;
         }
 
         public int GetCurTemp()

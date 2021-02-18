@@ -15,20 +15,20 @@ namespace UT_ECS_ModernSolution
             fakeSensor = new FakeSensor();
             fakeHeater = new FakeHeater();
             
-            uut = new ECS(10,fakeSensor, fakeHeater);
+            uut = new ECS(10, 45,fakeSensor, fakeHeater);
         }
 
         [TestCase(5)]
         [TestCase(50)]
 
-        public void GetCurTemp_ValueUnderAndOverThreshold_returnsTestCaseValues(int fakeTemp)
+        public void GetCurTemp_ValueOverAndUnderMinThreshold_returnsTestCaseValues(int fakeTemp)
         {
             fakeSensor.Temp = fakeTemp;
             Assert.That(uut.GetCurTemp(), Is.EqualTo(fakeTemp));
         }
 
         [Test]
-        public void Regulate_ValueOverThreshold_HeaterOff()
+        public void Regulate_ValueOverMinThreshold_HeaterOff()
         {
             fakeSensor.Temp = 15;
             uut.Regulate();
@@ -37,7 +37,7 @@ namespace UT_ECS_ModernSolution
         }
 
         [Test]
-        public void Regulate_ValueUnderThreshold_HeaterOn()
+        public void Regulate_ValueUnderMinThreshold_HeaterOn()
         {
             fakeSensor.Temp = 5;
             uut.Regulate();
