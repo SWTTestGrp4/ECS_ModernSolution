@@ -1,4 +1,5 @@
-﻿using ECS_ModernSolution;
+﻿using System;
+using ECS_ModernSolution;
 
 namespace UT_ECS_ModernSolution
 {
@@ -6,12 +7,12 @@ namespace UT_ECS_ModernSolution
     {
         public void TurnOn()
         {
-            
+            Console.WriteLine("Heater turned on");
         }
 
         public void TurnOff()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Heater turned off");
         }
 
         public bool RunSelfTest()
