@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS_ModernSolution", "ECS_ModernSolution\ECS_ModernSolution.csproj", "{DF1ADB77-1AC7-4176-8EE2-42A98BF1746B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS_ModernSolution", "ECS_ModernSolution\ECS_ModernSolution.csproj", "{DF1ADB77-1AC7-4176-8EE2-42A98BF1746B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UT_ECS_ModernSolution", "UT_ECS_ModerSolution\UT_ECS_ModernSolution.csproj", "{DBE7322D-2863-44E1-BE7C-62C69308AB0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UT_ECS_ModernSolution", "UT_ECS_ModerSolution\UT_ECS_ModernSolution.csproj", "{DBE7322D-2863-44E1-BE7C-62C69308AB0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS.Legacy", "..\ECS Legacy Solution\ECS.Legacy\ECS.Legacy.csproj", "{7BBA6D8F-4649-4ADB-B90E-94F0FB6554AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DBE7322D-2863-44E1-BE7C-62C69308AB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBE7322D-2863-44E1-BE7C-62C69308AB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBE7322D-2863-44E1-BE7C-62C69308AB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBA6D8F-4649-4ADB-B90E-94F0FB6554AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBA6D8F-4649-4ADB-B90E-94F0FB6554AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBA6D8F-4649-4ADB-B90E-94F0FB6554AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBA6D8F-4649-4ADB-B90E-94F0FB6554AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
