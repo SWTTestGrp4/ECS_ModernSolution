@@ -80,5 +80,17 @@ namespace UT_ECS_ModernSolution
             uut.Regulate();
             Assert.That(uut.WindowOpen, Is.EqualTo(true));
         }
+
+        [TestCase(true, true, true)]
+        [TestCase(true, false, false)]
+        [TestCase(false, true, false)]
+        [TestCase(false, false, false)]
+        public void RunSelfTest_AllCases_ReturnCorrectOutput(bool heaterResult, bool sensorResult, bool expectedResult)
+        {
+            fakeHeater.SelfTestResult = heaterResult;
+            fakeSensor.SelfTestResult = sensorResult;
+
+            Assert.That(uut.RunSelfTest, Is.EqualTo(expectedResult));
+        }
     }
 }
