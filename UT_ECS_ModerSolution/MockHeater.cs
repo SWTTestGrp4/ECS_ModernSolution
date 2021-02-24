@@ -6,16 +6,16 @@ namespace UT_ECS_ModernSolution
     public class MockHeater: IHeater
     {
 
-        public bool Result { get; set; }
+        public bool ResultHeaterIsOn { get; set; }
         public void TurnOn()
         {
-            Result = true;
+            ResultHeaterIsOn = true;
             Console.WriteLine("Heater turned on");
         }
 
         public void TurnOff()
         {
-            Result = false;
+            ResultHeaterIsOn = false;
             Console.WriteLine("Heater turned off");
         }
 

@@ -33,7 +33,7 @@ namespace UT_ECS_ModernSolution
             fakeSensor.Temp = 15;
             uut.Regulate();
 
-            Assert.That(fakeHeater.Result, Is.EqualTo(false));
+            Assert.That(fakeHeater.ResultHeaterIsOn, Is.EqualTo(false));
         }
 
         [Test]
@@ -42,7 +42,7 @@ namespace UT_ECS_ModernSolution
             fakeSensor.Temp = 5;
             uut.Regulate();
 
-            Assert.That(fakeHeater.Result, Is.EqualTo(true));
+            Assert.That(fakeHeater.ResultHeaterIsOn, Is.EqualTo(true));
         }
 
         [Test]
