@@ -2,7 +2,7 @@
 
 namespace UT_ECS_ModernSolution
 {
-    public class FakeSensor : ISensor
+    public class StubSensor : ISensor
     {
         public int Temp { get; set; }
         public int GetTemp()

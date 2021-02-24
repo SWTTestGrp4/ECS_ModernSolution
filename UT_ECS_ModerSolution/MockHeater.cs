@@ -3,7 +3,7 @@ using ECS_ModernSolution;
 
 namespace UT_ECS_ModernSolution
 {
-    public class FakeHeater: IHeater
+    public class MockHeater: IHeater
     {
 
         public bool Result { get; set; }

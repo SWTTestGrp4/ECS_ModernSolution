@@ -7,13 +7,13 @@ namespace UT_ECS_ModernSolution
     public class ECSUnitTest
     {
         private ECS uut;
-        private FakeSensor fakeSensor;
-        private FakeHeater fakeHeater;
+        private StubSensor fakeSensor;
+        private MockHeater fakeHeater;
         [SetUp]
         public void Setup()
         {
-            fakeSensor = new FakeSensor();
-            fakeHeater = new FakeHeater();
+            fakeSensor = new StubSensor();
+            fakeHeater = new MockHeater();
             
             uut = new ECS(10, 45,fakeSensor, fakeHeater);
         }
