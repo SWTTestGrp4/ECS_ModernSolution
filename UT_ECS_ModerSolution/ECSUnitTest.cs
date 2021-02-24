@@ -33,7 +33,7 @@ namespace UT_ECS_ModernSolution
             fakeSensor.Temp = 15;
             uut.Regulate();
 
-            Assert.That(fakeHeater.ResultHeaterIsOn, Is.EqualTo(false));
+            Assert.That(fakeHeater.HeaterIsOn, Is.EqualTo(false));
         }
 
         [Test]
@@ -42,7 +42,7 @@ namespace UT_ECS_ModernSolution
             fakeSensor.Temp = 5;
             uut.Regulate();
 
-            Assert.That(fakeHeater.ResultHeaterIsOn, Is.EqualTo(true));
+            Assert.That(fakeHeater.HeaterIsOn, Is.EqualTo(true));
         }
 
         [Test]
@@ -59,6 +59,18 @@ namespace UT_ECS_ModernSolution
             fakeSensor.Temp = 50;
             uut.Regulate();
             Assert.That(uut.WindowOpen, Is.EqualTo(true));
+        }
+
+        [TestCase(true, true, true)]
+        [TestCase(true, false, false)]
+        [TestCase(false, true, false)]
+        [TestCase(false, false, false)]
+        public void RunSelfTest_AllCases_ReturnCorrectOutput(bool heaterResult, bool sensorResult, bool expectedResult)
+        {
+            fakeHeater.SelfTestResult = heaterResult;
+            fakeSensor.SelfTestResult = sensorResult;
+
+            Assert.That(uut.RunSelfTest, Is.EqualTo(expectedResult));
         }
     }
 }

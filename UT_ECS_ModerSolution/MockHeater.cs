@@ -5,23 +5,23 @@ namespace UT_ECS_ModernSolution
 {
     public class MockHeater: IHeater
     {
-
-        public bool ResultHeaterIsOn { get; set; }
+        public bool SelfTestResult { get; set; }
+        public bool HeaterIsOn { get; set; }
         public void TurnOn()
         {
-            ResultHeaterIsOn = true;
+            HeaterIsOn = true;
             Console.WriteLine("Heater turned on");
         }
 
         public void TurnOff()
         {
-            ResultHeaterIsOn = false;
+            HeaterIsOn = false;
             Console.WriteLine("Heater turned off");
         }
 
         public bool RunSelfTest()
         {
-            return true;
+            return SelfTestResult;
         }
     }
 

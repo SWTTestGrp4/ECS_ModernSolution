@@ -4,6 +4,7 @@ namespace UT_ECS_ModernSolution
 {
     public class StubSensor : ISensor
     {
+        public bool SelfTestResult { get; set; }
         public int Temp { get; set; }
         public int GetTemp()
         {
@@ -12,7 +13,7 @@ namespace UT_ECS_ModernSolution
 
         public bool RunSelfTest()
         {
-            return true;
+            return SelfTestResult;
         }
     }
 
