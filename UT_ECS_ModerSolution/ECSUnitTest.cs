@@ -27,23 +27,43 @@ namespace UT_ECS_ModernSolution
             Assert.That(uut.GetCurTemp(), Is.EqualTo(fakeTemp));
         }
 
-        [Test]
-        public void Regulate_ValueOverMinThreshold_HeaterOff()
+        [TestCase(50,0)]
+        [TestCase(30, 0)]
+        [TestCase(5, 1)]
+        public void Regulate_TempSet_IfTempLessThan10HeaterOnCounterEqualToResult(int temp, int result)
         {
-            fakeSensor.Temp = 15;
+            fakeSensor.Temp = temp;
             uut.Regulate();
 
-            Assert.That(fakeHeater.ResultHeaterIsOn, Is.EqualTo(false));
+            Assert.That(fakeHeater.OnCounter, Is.EqualTo(result));
         }
 
-        [Test]
-        public void Regulate_ValueUnderMinThreshold_HeaterOn()
+        [TestCase(50, 0, 1, 5, 1, 1)]
+        [TestCase(-10, 1, 0, 5, 2, 0)]
+        [TestCase(50, 0, 1, 55, 0, 2)]
+        public void Regulate_TempSetToTurnOnHeaterAndthenToTurnOff_OnCounterAndOffcounterIsEqualToResult(int temp1, int onResult1, int offResult1, int temp2, int onResult2, int offResult2 )
         {
-            fakeSensor.Temp = 5;
+            fakeSensor.Temp = temp1;
             uut.Regulate();
 
-            Assert.That(fakeHeater.ResultHeaterIsOn, Is.EqualTo(true));
+            Assert.That(fakeHeater.OnCounter, Is.EqualTo(onResult1));
+            Assert.That(fakeHeater.OffCounter, Is.EqualTo(offResult1));
+            fakeSensor.Temp = temp2;
+            uut.Regulate();
+
+            Assert.That(fakeHeater.OnCounter, Is.EqualTo(onResult2));
+            Assert.That(fakeHeater.OffCounter, Is.EqualTo(offResult2));
+
+
         }
+        //[Test]
+        //public void Regulate_ValueUnderMinThreshold_HeaterOn()
+        //{
+        //    fakeSensor.Temp = 5;
+        //    uut.Regulate();
+
+        //    Assert.That(fakeHeater.ResultHeaterIsOn, Is.EqualTo(true));
+        //}
 
         [Test]
         public void Regulate_TempUnderThreshold_WindowClosed()
