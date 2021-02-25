@@ -7,9 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NSubstitute" Version="4.2.2" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0-beta.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.0-preview-20210127-04" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0-preview-20210219-03" />
     <PackageReference Include="NunitXml.TestLogger" Version="3.0.91" />
   </ItemGroup>
 
