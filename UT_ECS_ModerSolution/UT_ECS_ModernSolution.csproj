@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>UT_ECS_ModernSolution</AssemblyName>
+
+    <RootNamespace>UT_ECS_ModernSolution</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ECS_ModernSolution\ECS_ModernSolution.csproj" />
     <ProjectReference Include="..\ECS_ModernSolution\ECS_ModernSolution.csproj" />
   </ItemGroup>
 
