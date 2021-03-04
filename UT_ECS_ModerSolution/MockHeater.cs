@@ -1,7 +1,7 @@
 ﻿using System;
 using ECS_ModernSolution;
 
-namespace UT_ECS_ModernSolution
+namespace UT_ECS_ModerSolution
 {
     public class MockHeater: IHeater
     {

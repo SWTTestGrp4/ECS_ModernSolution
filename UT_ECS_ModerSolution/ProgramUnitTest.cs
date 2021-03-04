@@ -1,7 +1,7 @@
 using ECS_ModernSolution;
 using NUnit.Framework;
 
-namespace UT_ECS_ModernSolution
+namespace UT_ECS_ModerSolution
 {
     public class ProgramUnitTest
     {

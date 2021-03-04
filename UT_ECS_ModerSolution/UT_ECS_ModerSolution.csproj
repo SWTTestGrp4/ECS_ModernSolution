@@ -5,7 +5,7 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>UT_ECS_ModernSolution</AssemblyName>
+    <AssemblyName>UT_ECS_ModerSolution</AssemblyName>
 
     <RootNamespace>UT_ECS_ModernSolution</RootNamespace>
   </PropertyGroup>

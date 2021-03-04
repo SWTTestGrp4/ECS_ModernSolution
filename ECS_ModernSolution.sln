@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECS_ModernSolution", "ECS_ModernSolution\ECS_ModernSolution.csproj", "{DF1ADB77-1AC7-4176-8EE2-42A98BF1746B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UT_ECS_ModernSolution", "UT_ECS_ModerSolution\UT_ECS_ModernSolution.csproj", "{DBE7322D-2863-44E1-BE7C-62C69308AB0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UT_ECS_ModerSolution", "UT_ECS_ModerSolution\UT_ECS_ModerSolution.csproj", "{DBE7322D-2863-44E1-BE7C-62C69308AB0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

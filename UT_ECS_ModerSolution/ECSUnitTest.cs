@@ -2,7 +2,7 @@ using ECS_ModernSolution;
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
 using NUnit.Framework;
 
-namespace UT_ECS_ModernSolution
+namespace UT_ECS_ModerSolution
 {
     public class ECSUnitTest
     {
